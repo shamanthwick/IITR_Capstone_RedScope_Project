@@ -1,0 +1,9 @@
+---
+- name: Kali provisioning
+  hosts: kali
+  become: true
+  tasks:
+    - name: Placeholder Kali setup
+      debug:
+        msg: "Install attacker tools, shortcuts, and lab-specific settings here."
+

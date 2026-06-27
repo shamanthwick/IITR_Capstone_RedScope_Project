@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  juice-shop:
+    image: bkimminich/juice-shop:latest
+    container_name: capstone-juice-shop
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - capstone-lab
+
+  dvwa:
+    image: vulnerables/web-dvwa:latest
+    container_name: capstone-dvwa
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    networks:
+      - capstone-lab
+
+networks:
+  capstone-lab:
+    name: capstone-lab
+    driver: bridge
+

@@ -1,0 +1,23 @@
+# VM images and snapshots
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.iso
+*.img
+*.7z
+*.zip
+*.tar
+*.gz
+Snapshots/
+Logs/
+
+# Generated or local-only files
+*.log
+*.tmp
+*.bak
+Thumbs.db
+Desktop.ini
+

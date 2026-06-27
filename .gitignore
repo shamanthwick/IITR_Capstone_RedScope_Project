@@ -1,0 +1,26 @@
+# VM images and runtime artifacts
+00-lab-repro-kit/vms/
+00-lab-repro-kit/assets/downloads/
+00-lab-repro-kit/assets/metasploitable2/
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.iso
+*.img
+*.7z
+*.zip
+*.tar
+*.gz
+*.log
+*.tmp
+*.bak
+*.vbox-prev
+Snapshots/
+Logs/
+
+# Local OS noise
+Thumbs.db
+Desktop.ini
