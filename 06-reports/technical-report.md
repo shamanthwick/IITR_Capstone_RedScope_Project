@@ -7,7 +7,7 @@ RedScope Capstone Red-Team Assessment
 ## Team
 
 - Shamanth R Singh
-- Ajith Mohan
+- Ajit Mohan
 - Saiteja Kacham
 - Madhurjya Deka
 
@@ -468,8 +468,8 @@ These commands are included for traceability, not as a generalized exploit recip
 
 ## 21. Team Contributions
 
-- Shamanth R Singh: scope control, web exploitation summary, reporting consolidation
-- Ajith Mohan: network exploitation and post-exploitation analysis
+- Ajit Mohan: scope control, web exploitation summary, reporting consolidation
+- Shamanth R Singh: network exploitation and post-exploitation analysis
 - Saiteja Kacham: ML detector work, defender comparison, evasion interpretation
 - Madhurjya Deka: remediation framing, executive impact language, presentation support
 
