@@ -7,7 +7,7 @@ RedScope Capstone Red-Team Assessment
 ## Team
 
 - Shamanth R Singh
-- Ajith Mohan
+- Ajit Mohan
 - Saiteja Kacham
 - Madhurjya Deka
 
@@ -146,7 +146,7 @@ Keep rules of engagement, logs, and evidence trails for every test. The project 
 ## Team Roles
 
 - Shamanth R Singh: scope, lab coordination, web exploitation summary, final consolidation
-- Ajith Mohan: network foothold, post-exploitation summary, ATT&CK mapping
+- Ajit Mohan: network foothold, post-exploitation summary, ATT&CK mapping
 - Saiteja Kacham: ML detector work, evasion testing, defender comparison
 - Madhurjya Deka: remediation framing, business impact, and presentation support
 
