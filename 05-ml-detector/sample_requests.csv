@@ -1,0 +1,21 @@
+label,request
+normal,GET / HTTP/1.1
+normal,GET /products HTTP/1.1
+normal,GET /login HTTP/1.1
+normal,POST /login username=alice&password=Password123
+normal,GET /api/Products HTTP/1.1
+normal,GET /rest/products/search?q=apple HTTP/1.1
+normal,POST /contact name=Alice&message=hello
+normal,GET /assets/main.js HTTP/1.1
+normal,GET /profile?id=12 HTTP/1.1
+normal,POST /cart productId=3&quantity=1
+attack,GET /item?id=1' OR '1'='1 HTTP/1.1
+attack,GET /search?q=' UNION SELECT username password FROM users-- HTTP/1.1
+attack,POST /login username=admin'--&password=x
+attack,GET /product?id=1; DROP TABLE users;-- HTTP/1.1
+attack,GET /?q=<script>alert(1)</script> HTTP/1.1
+attack,POST /comment body=<img src=x onerror=alert(1)>
+attack,GET /vulnerabilities/exec/?ip=127.0.0.1;cat /etc/passwd HTTP/1.1
+attack,GET /?file=../../../../etc/passwd HTTP/1.1
+attack,GET /api/user/1 OR 1=1 HTTP/1.1
+attack,POST /login username=' OR 1=1--&password=test
