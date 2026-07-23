@@ -1,7 +1,9 @@
 # VM images and runtime artifacts
 00-lab-repro-kit/vms/
 00-lab-repro-kit/assets/downloads/
+00-lab-repro-kit/assets/_mega-downloads/
 00-lab-repro-kit/assets/metasploitable2/
+00-lab-repro-kit/lab-manifest.json
 *.ova
 *.ovf
 *.vdi
@@ -24,3 +26,9 @@ Logs/
 # Local OS noise
 Thumbs.db
 Desktop.ini
+
+# Python local environment/cache
+.venv/
+venv/
+__pycache__/
+*.pyc

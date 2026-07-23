@@ -75,7 +75,7 @@ That folder is the source of truth for rebuilding the lab from configuration, sc
 | `05-ml-detector/` | Detector and evasion work |
 | `06-reports/` | Executive and technical reports |
 | `07-presentation/` | Debrief outline and slide structure |
-| `08-walkthrough/` | Walkthrough PDF and builder |
+| `08-walkthrough/` | Walkthrough PDF and DOCX |
 
 ## Final Deliverables
 
@@ -108,9 +108,8 @@ That folder is the source of truth for rebuilding the lab from configuration, sc
 - [Executive report](./06-reports/executive-report.md)
 - [Technical report](./06-reports/technical-report.md)
 - [Debrief outline](./07-presentation/outline.md)
-- [Walkthrough PDF builder](./08-walkthrough/build_walkthrough_pdf.py)
+- [Walkthrough PDF](./08-walkthrough/RedScope_Project_Walkthrough.pdf)
 
 ---
 
 If you want the deck and reports to line up exactly, keep the README narrative in the same order as the project flow above.
-

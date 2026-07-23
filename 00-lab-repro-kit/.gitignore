@@ -15,9 +15,10 @@ Snapshots/
 Logs/
 
 # Generated or local-only files
+lab-manifest.json
+assets/_mega-downloads/
 *.log
 *.tmp
 *.bak
 Thumbs.db
 Desktop.ini
-

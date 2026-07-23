@@ -5,6 +5,7 @@
 - Docker Desktop installed and running
 - Docker Compose available
 - VirtualBox 7.2.10 installed
+- MEGA downloader available as `mega-get` if artifacts are not already cached locally
 - Kali VM created as `Capstone-Kali`
 - Metasploitable 2 VM imported as `Capstone-Metasploitable2`
 
@@ -17,9 +18,15 @@ VBoxManage --version
 ```
 
 ```powershell
-cd "F:\for project\00-lab-repro-kit"
-docker compose up -d
-docker ps
+cd "F:\RedScope Capstone Project\00-lab-repro-kit"
+pwsh ./scripts/setup-lab.ps1
+```
+
+macOS Intel:
+
+```bash
+cd 00-lab-repro-kit
+bash ./scripts/setup-lab-macos.sh
 ```
 
 Expected containers:
@@ -37,7 +44,7 @@ Expected VMs:
 VirtualBox machine files are kept under:
 
 ```text
-F:\for project\00-lab\vms
+00-lab-repro-kit\vms
 ```
 
 ## Network layout
@@ -76,4 +83,3 @@ VBoxManage controlvm "Capstone-Metasploitable2" poweroff
 - Keep all scanning inside the lab subnet.
 - Do not expose DVWA, Juice Shop, or Metasploitable to public networks.
 - Keep the original `00-lab` and `repro-kit` folders until cleanup is approved.
-

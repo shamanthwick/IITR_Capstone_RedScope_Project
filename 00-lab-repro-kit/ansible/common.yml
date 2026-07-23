@@ -1,9 +1,0 @@
----
-- name: Common lab baseline
-  hosts: all
-  become: true
-  tasks:
-    - name: Ensure packages are present
-      debug:
-        msg: "Replace this placeholder with shared provisioning tasks."
-

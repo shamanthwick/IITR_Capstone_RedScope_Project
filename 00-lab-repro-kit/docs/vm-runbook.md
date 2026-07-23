@@ -2,14 +2,14 @@
 
 ## VirtualBox storage
 
-The bootstrap process creates the VMs locally and keeps them under the VirtualBox default machine storage path.
+The setup process imports the exported Capstone OVAs and keeps the VMs under the VirtualBox default machine storage path.
 
 ## Capstone VMs
 
 | VM | Purpose | Status |
 | --- | --- | --- |
-| RedScope-Kali | Attacker workstation | Created by bootstrap |
-| RedScope-Metasploitable2 | Vulnerable Linux target | Created by bootstrap |
+| Capstone-Kali | Attacker workstation | Imported from `Capstone-Kali.ova` |
+| Capstone-Metasploitable2 | Vulnerable Linux target | Imported from `Capstone-Metasploitable2.ova` |
 
 ## Network layout
 
@@ -34,10 +34,9 @@ nmap -sn 10.77.0.0/24
 
 ## Start and stop
 
-Use the bootstrap script to create the lab, and the stop script to shut it down cleanly:
+Use the setup script to create the lab, and the stop script to shut it down cleanly:
 
 ```powershell
-.\scripts\bootstrap-lab.ps1
+pwsh ./scripts/setup-lab.ps1
 .\scripts\stop-lab.ps1
 ```
-

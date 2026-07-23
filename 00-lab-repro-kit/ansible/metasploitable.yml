@@ -1,9 +1,0 @@
----
-- name: Metasploitable provisioning
-  hosts: metasploitable
-  become: true
-  tasks:
-    - name: Placeholder target setup
-      debug:
-        msg: "Document or automate only safe baseline changes here."
-
