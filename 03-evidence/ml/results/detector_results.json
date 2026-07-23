@@ -1,0 +1,192 @@
+{
+  "experiment": "RedScope Adversarial ML Detector Comparison",
+  "scope": "lab-only",
+  "generated_at": "2026-07-23T21:25:49+05:30",
+  "timezone": "Asia/Kolkata",
+  "environment": {
+    "python": "3.12.13",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0"
+  },
+  "dataset": {
+    "file": "sample_requests.csv",
+    "samples": 20,
+    "normal": 10,
+    "attack": 10
+  },
+  "split": {
+    "test_size": 0.3,
+    "random_state": 7,
+    "stratified": true
+  },
+  "models": [
+    {
+      "name": "Word-token baseline",
+      "description": "Word-token TF-IDF features with Logistic Regression",
+      "confusion_matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "accuracy": 0.8333333333333334,
+      "attack_precision": 1.0,
+      "attack_recall": 0.6666666666666666,
+      "attack_f1": 0.8,
+      "classification_report": {
+        "normal": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1-score": 0.8571428571428571,
+          "support": 3.0
+        },
+        "attack": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.8,
+          "support": 3.0
+        },
+        "accuracy": 0.8333333333333334,
+        "macro avg": {
+          "precision": 0.875,
+          "recall": 0.8333333333333333,
+          "f1-score": 0.8285714285714285,
+          "support": 6.0
+        },
+        "weighted avg": {
+          "precision": 0.875,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.8285714285714286,
+          "support": 6.0
+        }
+      },
+      "false_negatives": [
+        "GET /?q=<script>alert(1)</script> HTTP/1.1"
+      ],
+      "false_positives": [],
+      "evasion_results": [
+        {
+          "sample_id": "EV-01",
+          "technique": "URL-encoded SQL injection",
+          "request": "GET /item?id=1%27%20OR%20%271%27=%271 HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.543720413882963,
+          "outcome": "detected"
+        },
+        {
+          "sample_id": "EV-02",
+          "technique": "Inline-comment SQL injection",
+          "request": "GET /item?id=1'/**/OR/**/'1'='1 HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.5994167501505205,
+          "outcome": "detected"
+        },
+        {
+          "sample_id": "EV-03",
+          "technique": "Mixed-case SQL injection",
+          "request": "GET /item?id=1' oR '1'='1 HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.5994167501505205,
+          "outcome": "detected"
+        },
+        {
+          "sample_id": "EV-04",
+          "technique": "URL-encoded XSS",
+          "request": "GET /search?q=%3Cscript%3Ealert(1)%3C/script%3E HTTP/1.1",
+          "prediction": "normal",
+          "attack_probability": 0.4383212192344742,
+          "outcome": "evaded"
+        }
+      ]
+    },
+    {
+      "name": "Char n-gram defender",
+      "description": "Character 3–5 gram TF-IDF features with Logistic Regression",
+      "confusion_matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "accuracy": 0.6666666666666666,
+      "attack_precision": 0.6666666666666666,
+      "attack_recall": 0.6666666666666666,
+      "attack_f1": 0.6666666666666666,
+      "classification_report": {
+        "normal": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 3.0
+        },
+        "attack": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 3.0
+        },
+        "accuracy": 0.6666666666666666,
+        "macro avg": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        },
+        "weighted avg": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 6.0
+        }
+      },
+      "false_negatives": [
+        "GET /product?id=1; DROP TABLE users;-- HTTP/1.1"
+      ],
+      "false_positives": [
+        "POST /contact name=Alice&message=hello"
+      ],
+      "evasion_results": [
+        {
+          "sample_id": "EV-01",
+          "technique": "URL-encoded SQL injection",
+          "request": "GET /item?id=1%27%20OR%20%271%27=%271 HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.5428070063949811,
+          "outcome": "detected"
+        },
+        {
+          "sample_id": "EV-02",
+          "technique": "Inline-comment SQL injection",
+          "request": "GET /item?id=1'/**/OR/**/'1'='1 HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.5683115717228164,
+          "outcome": "detected"
+        },
+        {
+          "sample_id": "EV-03",
+          "technique": "Mixed-case SQL injection",
+          "request": "GET /item?id=1' oR '1'='1 HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.5957132995631585,
+          "outcome": "detected"
+        },
+        {
+          "sample_id": "EV-04",
+          "technique": "URL-encoded XSS",
+          "request": "GET /search?q=%3Cscript%3Ealert(1)%3C/script%3E HTTP/1.1",
+          "prediction": "attack",
+          "attack_probability": 0.5014026548642121,
+          "outcome": "detected"
+        }
+      ]
+    }
+  ]
+}
